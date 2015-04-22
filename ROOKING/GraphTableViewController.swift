@@ -1,5 +1,5 @@
 //
-//  MenuTableViewController.swift
+//  GraphTableViewController.swift
 //  ROOKING
 //
 //  Created by Naing Lin Aung on 4/22/15.
@@ -8,10 +8,17 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class GraphTableViewController: UITableViewController {
 
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,13 +37,13 @@ class MenuTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 3
+        return 0
     }
 
     /*
