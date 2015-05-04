@@ -18,17 +18,19 @@ class GalleryTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var title: UILabel!
-    
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
     @IBOutlet weak var imageOne: UIImageView!
+    
+    
     func updateUI() {
     
         var data: AnyObject = coll!["title"]!
-        title.text = "\(data)"
-        imageOne.image = UIImage(named: "one.png")
-        imageTwo.image = UIImage(named: "one.png")
-        imageThree.image = UIImage(named: "one.png")
+        println(data)
+       title.text = "\(data)"
+       imageOne.image = UIImage(named: "one.png")
+       imageTwo.image = UIImage(named: "one.png")
+       imageThree.image = UIImage(named: "one.png")
     }
     
     

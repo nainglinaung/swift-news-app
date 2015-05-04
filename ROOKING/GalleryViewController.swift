@@ -13,6 +13,8 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var mainButton: UIButton!
     var galleryArray:NSArray = []
+    var request = Request()
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return galleryArray.count
@@ -35,14 +37,8 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
             mainButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: .TouchUpInside)
         }
         
-        if let url = NSURL(string: URL.main) {
-            if let data = NSData(contentsOfURL: url) {
-                galleryArray =  NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error:nil) as! NSArray
-                println("Hi")
-            }
-        }
+        galleryArray = request.send(URL.main)!
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

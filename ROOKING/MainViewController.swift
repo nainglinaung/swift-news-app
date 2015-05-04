@@ -18,6 +18,7 @@ public struct URL {
     static let gallery = "http://localhost:3000/gallery"
 }
 
+var request = Request()
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -41,12 +42,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = NSURL(string: URL.main) {
-            if let data = NSData(contentsOfURL: url) {
-                titleArray =  NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error:nil) as! NSArray
-            }
-        }
-        println("from Main")
+        
+        titleArray = request.send(URL.main)!
+    
         
         self.navigationController?.navigationBarHidden = true
     
