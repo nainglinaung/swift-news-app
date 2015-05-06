@@ -16,7 +16,8 @@ class GalleryTableViewCell: UITableViewCell {
         }
     }
     
-    
+    var imageCache = [String:UIImage]()
+   
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
@@ -25,12 +26,21 @@ class GalleryTableViewCell: UITableViewCell {
     
     func updateUI() {
     
-        var data: AnyObject = coll!["title"]!
-        println(data)
-       title.text = "\(data)"
-       imageOne.image = UIImage(named: "one.png")
-       imageTwo.image = UIImage(named: "one.png")
-       imageThree.image = UIImage(named: "one.png")
+        var collectionTitle = coll!["title"]! as! String
+        var collectionImagePath = coll!["image"]! as! String
+        title.text = collectionTitle
+        var imageURL = NSURL(string: collectionImagePath)
+        
+        imageOne.image = UIImage(named: "one.png")
+        imageTwo.image = UIImage(named: "one.png")
+        imageThree.image = UIImage(named: "one.png")
+        
+        request.getImage(collectionImagePath, callback: {(image) in
+            self.imageOne.image = image
+            self.imageTwo.image = image
+            self.imageThree.image = image
+        })
+
     }
     
     

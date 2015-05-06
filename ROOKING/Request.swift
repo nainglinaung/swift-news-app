@@ -9,7 +9,11 @@
 import Foundation
 
 
+
+
 public class Request {
+    
+    var imageCache = [String:UIImage]()
         
     func send(urlString:String) -> NSArray?{
         if let url = NSURL(string: urlString) {
@@ -19,6 +23,29 @@ public class Request {
             }
         }
         return nil
+    }
+    
+    func getImage(urlString:String,callback: UIImage? -> Void) {
+        
+        if let image = imageCache[urlString] {
+            callback(image)
+        } else {
+            let imageURL = NSURL(string: urlString)
+            let request = NSURLRequest(URL: imageURL!)
+            let mainQueue = NSOperationQueue.mainQueue()
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data: data)
+                    self.imageCache[urlString] = image
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        callback(image)
+                    })
+                }
+            })
+            callback(nil)
+        }
+       
     }
 
 }

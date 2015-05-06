@@ -17,6 +17,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var featured: UIImageView!
     
+    
     var coll: NSDictionary? {
         didSet {
             updateUI()
@@ -34,9 +35,19 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        var data: AnyObject = coll!["title"]!
-        title.text = "\(data)"
+        var data = coll!["title"]! as! String
+        var urlString = coll!["image"]! as! String
+        
+        title.text = data
         featured.image = UIImage(named: "one.png")
+        
+        request.getImage(urlString, callback: {(image) in
+           self.featured.image = image
+        })
+        
+        
+        
+        
     }
 
 }

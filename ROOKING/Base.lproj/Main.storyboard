@@ -526,14 +526,24 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MmS-H7-SRB">
+                                            <rect key="frame" x="49" y="8" width="100" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="nPO-r7-AAZ"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="v6i-E4-AzN" firstAttribute="leading" secondItem="LhU-Pv-Kpr" secondAttribute="leadingMargin" id="0bZ-83-X2F"/>
                                         <constraint firstItem="v6i-E4-AzN" firstAttribute="top" secondItem="LhU-Pv-Kpr" secondAttribute="topMargin" constant="3" id="3zW-Uz-aZA"/>
+                                        <constraint firstItem="MmS-H7-SRB" firstAttribute="leading" secondItem="v6i-E4-AzN" secondAttribute="trailing" constant="-1" id="K2Z-Nm-A4b"/>
+                                        <constraint firstItem="MmS-H7-SRB" firstAttribute="bottom" secondItem="LhU-Pv-Kpr" secondAttribute="bottomMargin" id="N6H-nD-Guz"/>
+                                        <constraint firstItem="MmS-H7-SRB" firstAttribute="top" secondItem="LhU-Pv-Kpr" secondAttribute="topMargin" id="Y6o-Zk-MP4"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="v6i-E4-AzN" secondAttribute="bottom" constant="3" id="iPO-c0-Gyl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="featuredImage" destination="MmS-H7-SRB" id="GbX-2b-Jvd"/>
                                     <outlet property="titleLabel" destination="v6i-E4-AzN" id="gzn-g6-0qo"/>
                                 </connections>
                             </tableViewCell>

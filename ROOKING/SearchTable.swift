@@ -12,6 +12,7 @@ class SearchTable: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var featuredImage: UIImageView!
     
     var coll: NSDictionary? {
         didSet {
@@ -20,8 +21,13 @@ class SearchTable: UITableViewCell {
     }
     
     func updateUI() {
-           var data: AnyObject = coll!["title"]!
-           titleLabel.text = "\(data)"
+           var data = coll!["title"]! as! String
+           var urlString = coll!["image"]! as! String
+           titleLabel.text = data
+           request.getImage(urlString, callback: {(image) in
+               self.featuredImage.image = image
+           })
+        
     }
     
 }
