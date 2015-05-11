@@ -8,12 +8,22 @@
 
 import UIKit
 
-class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UITabBarDelegate{
 
     
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+        println(item.tag)
+        if item.tag == 1 {
+            revealViewController().revealToggle(self)
+        }
+    }
+    
+    @IBOutlet weak var Home: UITabBarItem!
     @IBOutlet weak var mainButton: UIButton!
+    
     var galleryArray:NSArray = []
     var request = Request()
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,14 +39,9 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        if self.revealViewController() != nil {
-            mainButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: .TouchUpInside)
-        }
-        
         galleryArray = request.send(URL.main)!
         
     }

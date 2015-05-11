@@ -20,12 +20,31 @@ public struct URL {
 
 var request = Request()
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate{
 
     
     var titleArray:NSArray = []
     
-    @IBOutlet var lorem: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+        println(item.tag)
+        if item.tag == 1 {
+            revealViewController().revealToggle(self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if  let index = tableView.indexPathForSelectedRow() {
+                if let controller = segue.destinationViewController as? WebViewController {
+                     controller.coll = titleArray[index.row] as? NSDictionary
+                }
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArray.count
@@ -33,6 +52,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! MainTableViewCell
+        println("lorem")
         if let data = titleArray[indexPath.row] as? NSDictionary {
             cell.coll = data
         }
@@ -44,13 +64,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         titleArray = request.send(URL.main)!
-    
-        
         self.navigationController?.navigationBarHidden = true
     
-        if self.revealViewController() != nil {
-          lorem.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: .TouchUpInside)
-        }
         
         // Do any additional setup after loading the view.
     }

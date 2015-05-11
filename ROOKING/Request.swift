@@ -24,7 +24,7 @@ public class Request {
         }
         return nil
     }
-    
+        
     func getImage(urlString:String,callback: UIImage? -> Void) {
         
         if let image = imageCache[urlString] {

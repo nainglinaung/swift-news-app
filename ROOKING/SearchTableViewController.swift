@@ -24,6 +24,17 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        if segue.identifier == "showDetail" {
+            if  let index = tableView.indexPathForSelectedRow() {
+                if let controller = segue.destinationViewController as? WebViewController {
+                    controller.coll = resultArray[index.row] as? NSDictionary
+                }
+            }
+        }
+    }
     
     func updateUI() {
         // update UI

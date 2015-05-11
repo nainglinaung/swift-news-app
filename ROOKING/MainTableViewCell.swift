@@ -37,10 +37,8 @@ class MainTableViewCell: UITableViewCell {
     func updateUI() {
         var data = coll!["title"]! as! String
         var urlString = coll!["image"]! as! String
-        
         title.text = data
         featured.image = UIImage(named: "one.png")
-        
         request.getImage(urlString, callback: {(image) in
            self.featured.image = image
         })

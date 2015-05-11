@@ -21,8 +21,8 @@ class GalleryTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
-    @IBOutlet weak var imageOne: UIImageView!
     
+    @IBOutlet weak var imageOne: UIImageView!
     
     func updateUI() {
     
