@@ -27,7 +27,6 @@ class SearchTable: UITableViewCell {
            request.getImage(urlString, callback: {(image) in
                self.featuredImage.image = image
            })
-        
     }
     
 }

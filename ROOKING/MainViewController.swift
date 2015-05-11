@@ -16,6 +16,7 @@ public struct Storyboard {
 public struct URL {
     static let main = "http://localhost:3000"
     static let gallery = "http://localhost:3000/gallery"
+    static let side = "http://localhost:3000/two"
 }
 
 var request = Request()
@@ -33,8 +34,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         println(item.tag)
         if item.tag == 1 {
             revealViewController().revealToggle(self)
+        } else {
+            
+            if titleArray.count > 0 {
+                titleArray = []
+            }
+            
+            titleArray = request.send(URL.side)!
+            self.tableView.reloadData()
         }
     }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
@@ -62,6 +73,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         titleArray = request.send(URL.main)!
         self.navigationController?.navigationBarHidden = true

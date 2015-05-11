@@ -42,10 +42,6 @@ class MainTableViewCell: UITableViewCell {
         request.getImage(urlString, callback: {(image) in
            self.featured.image = image
         })
-        
-        
-        
-        
     }
 
 }
