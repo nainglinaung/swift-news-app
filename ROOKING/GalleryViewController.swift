@@ -42,7 +42,7 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        galleryArray = request.send(URL.main)!
+        galleryArray = request.send(URL.gallery)!
         
     }
 

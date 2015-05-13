@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GalleryTableViewCell: UITableViewCell {
 
     var coll: NSDictionary? {
@@ -21,26 +22,52 @@ class GalleryTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var imageThree: UIImageView!
     @IBOutlet weak var imageTwo: UIImageView!
-    
     @IBOutlet weak var imageOne: UIImageView!
     
     func updateUI() {
     
+        
+        
+        
+        
+        
+    
         var collectionTitle = coll!["title"]! as! String
-        var collectionImagePath = coll!["image"]! as! String
+        var collectionImagePath = coll!["images"]! as! [String]
+        
+       
+        
+        
+        
+        
+        
         title.text = collectionTitle
-        var imageURL = NSURL(string: collectionImagePath)
         
         imageOne.image = UIImage(named: "one.png")
         imageTwo.image = UIImage(named: "one.png")
         imageThree.image = UIImage(named: "one.png")
         
-        request.getImage(collectionImagePath, callback: {(image) in
+        
+        request.getImage(collectionImagePath[0], callback: {(image) in
             self.imageOne.image = image
+        })
+        
+        request.getImage(collectionImagePath[1], callback: {(image) in
             self.imageTwo.image = image
+        })
+        
+        request.getImage(collectionImagePath[2], callback: {(image) in
             self.imageThree.image = image
         })
 
+        
+        
+        
+     //   let imageValue = request.getImages(collectionImagePath);
+     
+       // println(imageValue)
+        
+        
     }
     
     

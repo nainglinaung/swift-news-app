@@ -19,7 +19,6 @@ class SearchTable: UITableViewCell {
             updateUI()
         }
     }
-    
     func updateUI() {
            var data = coll!["title"]! as! String
            var urlString = coll!["image"]! as! String
@@ -28,5 +27,4 @@ class SearchTable: UITableViewCell {
                self.featuredImage.image = image
            })
     }
-    
 }

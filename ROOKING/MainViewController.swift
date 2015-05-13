@@ -39,7 +39,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if titleArray.count > 0 {
                 titleArray = []
             }
-            
             titleArray = request.send(URL.side)!
             self.tableView.reloadData()
         }
@@ -73,14 +72,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         titleArray = request.send(URL.main)!
         self.navigationController?.navigationBarHidden = true
-    
-        
-        // Do any additional setup after loading the view.
     }
 
     
