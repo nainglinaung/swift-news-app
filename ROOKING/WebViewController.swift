@@ -13,7 +13,7 @@ import CoreData
 class WebViewController: UIViewController{
 
     @IBOutlet weak var webView: UIWebView!
-    var coll: NSMutableDictionary?
+    var coll: NSDictionary?
     var content:NSString?
     
     let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
@@ -32,7 +32,7 @@ class WebViewController: UIViewController{
     
     
     @IBAction func Bookmark(sender: UIBarButtonItem) {
-        if var data = coll {
+        if var data = coll as? NSMutableDictionary {
             data["data"] = content
             insertData(data)
         }
@@ -40,10 +40,21 @@ class WebViewController: UIViewController{
     
   
     override func viewDidLoad() {
-        if let link = coll!["link"]! as? String {
-         let url  = NSURL(string: link)
-         println(link)
-         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
+        
+        if let collection = coll {
+            if let link = collection["link"] as? String {
+              fetchURL(link)
+            }
+            println("hi")
+        } else {
+            print(coll)
+        }
+    }
+    
+    func fetchURL(link:String) {
+        let url  = NSURL(string: link)
+        println(link)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             if error == nil {
                 if let urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) {
                     self.content = urlContent
@@ -52,8 +63,8 @@ class WebViewController: UIViewController{
                     })
                 }
             }
-         })
-         task.resume()
-        }
+        })
+        task.resume()
     }
+    
 }

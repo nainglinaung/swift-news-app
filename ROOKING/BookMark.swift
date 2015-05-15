@@ -18,17 +18,28 @@ class BookMark: NSManagedObject {
     @NSManaged var link: String
     @NSManaged var data: String
     
-    func save(coll:NSMutableDictionary) {
-        
-             self.title =  coll["title"]! as! String
+    func save(coll:NSDictionary) {
+            self.title =  coll["title"]! as! String
             self.id    =  coll["id"]! as! Int
             self.image =  coll["image"]! as! String
             self.category = coll["category"]! as! String
             self.created_at = coll["created_at"]! as! String
             self.link  = coll["link"]! as! String
             self.data  = coll["data"]! as! String
-
-       
+    }
+    
+    func outputAsDictionary() -> NSDictionary?{
+        var dict:NSDictionary? = [
+            "title" : self.title,
+            "id"    : "\(self.id)",
+            "image" : self.image,
+            "category": self.category,
+            "created_at":self.created_at,
+            "link": self.link,
+            "data": self.data
+        ]
+        return dict
+    
     }
 
 }

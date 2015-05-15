@@ -13,6 +13,36 @@ import CoreData
 class BookMarkTableViewController: UITableViewController {
     
     
+    
+    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+    
+    var fetchResults = [BookMark]?()
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        
+        if segue.identifier == "bookMark" {
+            println(fetchResults)
+            if  let index = tableView.indexPathForSelectedRow() {
+                var destination =  segue.destinationViewController as? UIViewController
+                if let navCon = destination as? UINavigationController {
+                    if let finalController = navCon.visibleViewController as? WebViewController {
+                  
+                       if let Fetch = fetchResults {
+                            let result = Fetch[index.row]
+                            let dict = result.outputAsDictionary()
+                            finalController.coll = dict
+                       }
+                    }
+                }
+            }
+
+        }
+        
+        
+    }
     @IBAction func clear(sender: UIBarButtonItem) {
         
         if let fetch = fetchResults {
@@ -25,9 +55,6 @@ class BookMarkTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
-
-    var fetchResults = [BookMark]?()
     
     
     
@@ -40,6 +67,7 @@ class BookMarkTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest(entityName: "Bookmark")
         fetchResults = (managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [BookMark])!
         
+        
         if self.revealViewController() != nil {
             mainButton.target = self.revealViewController()
             mainButton.action = "revealToggle:"
@@ -51,7 +79,6 @@ class BookMarkTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source

@@ -406,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dep-mG-yer" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4690" y="1132"/>
+            <point key="canvasLocation" x="4068" y="1976"/>
         </scene>
         <!--Gallery View Controller-->
         <scene sceneID="m23-dB-wJa">
@@ -562,7 +562,7 @@
                                 <connections>
                                     <outlet property="featuredImage" destination="MmS-H7-SRB" id="GbX-2b-Jvd"/>
                                     <outlet property="titleLabel" destination="v6i-E4-AzN" id="gzn-g6-0qo"/>
-                                    <segue destination="8Ai-98-S0d" kind="show" id="K0o-a2-5qr"/>
+                                    <segue destination="8Ai-98-S0d" kind="show" identifier="showDetail" id="K0o-a2-5qr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -680,6 +680,7 @@
                                 <connections>
                                     <outlet property="imageview" destination="hXH-eo-uCC" id="Gr4-ox-wyc"/>
                                     <outlet property="title" destination="0tr-qD-nSF" id="sgB-2e-uRg"/>
+                                    <segue destination="8Ai-98-S0d" kind="showDetail" identifier="bookMark" id="83H-4x-4zd"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lLl-xe-Of1">
@@ -758,7 +759,7 @@
         <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="83H-4x-4zd"/>
         <segue reference="FDf-zw-xaI"/>
-        <segue reference="TzI-fG-3aA"/>
     </inferredMetricsTieBreakers>
 </document>
