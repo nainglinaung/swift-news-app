@@ -31,7 +31,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        println(item.tag)
+        // println(item.tag)
         if item.tag == 1 {
             revealViewController().revealToggle(self)
         } else {
@@ -49,8 +49,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if  let index = tableView.indexPathForSelectedRow() {
-                if let controller = segue.destinationViewController as? WebViewController {
-                     controller.coll = titleArray[index.row] as? NSDictionary
+                var destination =  segue.destinationViewController as? UIViewController
+                if let navCon = destination as? UINavigationController {
+                    if let value = navCon.visibleViewController as? WebViewController {
+                        value.coll =  titleArray[index.row] as? NSMutableDictionary
+                    }
                 }
             }
         }
@@ -62,8 +65,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! MainTableViewCell
-        println("lorem")
-        if let data = titleArray[indexPath.row] as? NSDictionary {
+        if let data = titleArray[indexPath.row] as? NSMutableDictionary {
             cell.coll = data
         }
         return cell
@@ -73,7 +75,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         titleArray = request.send(URL.main)!
-        self.navigationController?.navigationBarHidden = true
+       // self.navigationController?.navigationBarHidden = true
     }
 
     

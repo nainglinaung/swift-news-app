@@ -12,7 +12,7 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        println(item.tag)
+        // println(item.tag)
         if item.tag == 1 {
             revealViewController().revealToggle(self)
         }

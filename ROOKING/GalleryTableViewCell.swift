@@ -26,20 +26,9 @@ class GalleryTableViewCell: UITableViewCell {
     
     func updateUI() {
     
-        
-        
-        
-        
-        
     
         var collectionTitle = coll!["title"]! as! String
         var collectionImagePath = coll!["images"]! as! [String]
-        
-       
-        
-        
-        
-        
         
         title.text = collectionTitle
         
@@ -58,16 +47,7 @@ class GalleryTableViewCell: UITableViewCell {
         
         request.getImage(collectionImagePath[2], callback: {(image) in
             self.imageThree.image = image
-        })
-
-        
-        
-        
-     //   let imageValue = request.getImages(collectionImagePath);
-     
-       // println(imageValue)
-        
-        
+        })        
     }
     
     

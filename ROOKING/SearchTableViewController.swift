@@ -30,7 +30,9 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
         if segue.identifier == "showDetail" {
             if  let index = tableView.indexPathForSelectedRow() {
                 if let controller = segue.destinationViewController as? WebViewController {
-                    controller.coll = resultArray[index.row] as? NSDictionary
+                    if let data = resultArray[index.row] as? NSMutableDictionary {
+                        controller.coll = data
+                    }
                 }
             }
         }
@@ -39,7 +41,6 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     func updateUI() {
         // update UI
         tableView.reloadData()
-        println("update UI")
     }
     
     @IBOutlet weak var searchTextField: UITextField! {

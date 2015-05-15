@@ -18,7 +18,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var featured: UIImageView!
     
     
-    var coll: NSDictionary? {
+    var coll: NSMutableDictionary? {
         didSet {
             updateUI()
         }

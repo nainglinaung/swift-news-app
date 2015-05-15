@@ -25,8 +25,10 @@
 		2C0F34051AF763CE0074C910 /* SearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F34041AF763CE0074C910 /* SearchTable.swift */; };
 		2C0F34071AFA21C50074C910 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F34061AFA21C50074C910 /* WebViewController.swift */; };
 		2C0F342E1B0450780074C910 /* BookMarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F342D1B0450780074C910 /* BookMarkTableViewController.swift */; };
+		2C0F34341B0452B30074C910 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0F34331B0452B30074C910 /* BookMarkTableViewCell.swift */; };
 		2C5F36CB1AEE1D92004BDA5F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F36CA1AEE1D92004BDA5F /* MainTableViewCell.swift */; };
 		2C5F36CD1AEE4261004BDA5F /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5F36CC1AEE4261004BDA5F /* one.png */; };
+		2CBA5C681B04991C00CA6E7F /* BookMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA5C671B04991C00CA6E7F /* BookMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +66,10 @@
 		2C0F34041AF763CE0074C910 /* SearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTable.swift; sourceTree = "<group>"; };
 		2C0F34061AFA21C50074C910 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2C0F342D1B0450780074C910 /* BookMarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewController.swift; sourceTree = "<group>"; };
+		2C0F34331B0452B30074C910 /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		2C5F36CA1AEE1D92004BDA5F /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C5F36CC1AEE4261004BDA5F /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
+		2CBA5C671B04991C00CA6E7F /* BookMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +111,12 @@
 		2C021B2B1AE74F2600B534B3 /* ROOKING */ = {
 			isa = PBXGroup;
 			children = (
+				2C0F34351B0452B80074C910 /* BookMark Table */,
 				2C0F34321B04522D0074C910 /* SWREVEAL */,
 				2C0F34311B04521B0074C910 /* Main Table */,
 				2C0F34301B0452040074C910 /* Gallery Table */,
 				2C0F342F1B0451E00074C910 /* Search Table */,
 				2C5F36CC1AEE4261004BDA5F /* one.png */,
-				2C0F342D1B0450780074C910 /* BookMarkTableViewController.swift */,
 				2C021B2E1AE74F2600B534B3 /* AppDelegate.swift */,
 				2C021B351AE74F2600B534B3 /* Main.storyboard */,
 				2C0F34021AF75A1F0074C910 /* Request.swift */,
@@ -124,6 +128,7 @@
 				2C021B301AE74F2600B534B3 /* ROOKING.xcdatamodeld */,
 				2C021B2C1AE74F2600B534B3 /* Supporting Files */,
 				2C021B571AE754F900B534B3 /* ROOKING-Bridging-Header.h */,
+				2CBA5C671B04991C00CA6E7F /* BookMark.swift */,
 			);
 			path = ROOKING;
 			sourceTree = "<group>";
@@ -188,6 +193,15 @@
 				2C021B591AE754F900B534B3 /* SWRevealViewController.m */,
 			);
 			name = SWREVEAL;
+			sourceTree = "<group>";
+		};
+		2C0F34351B0452B80074C910 /* BookMark Table */ = {
+			isa = PBXGroup;
+			children = (
+				2C0F342D1B0450780074C910 /* BookMarkTableViewController.swift */,
+				2C0F34331B0452B30074C910 /* BookMarkTableViewCell.swift */,
+			);
+			name = "BookMark Table";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,10 +314,12 @@
 				2C0F33FF1AF09D530074C910 /* GalleryTableViewCell.swift in Sources */,
 				2C5F36CB1AEE1D92004BDA5F /* MainTableViewCell.swift in Sources */,
 				2C021B561AE751BA00B534B3 /* MenuTableViewController.swift in Sources */,
+				2C0F34341B0452B30074C910 /* BookMarkTableViewCell.swift in Sources */,
 				2C0F34071AFA21C50074C910 /* WebViewController.swift in Sources */,
 				2C0F33FD1AF0940C0074C910 /* GalleryViewController.swift in Sources */,
 				2C0F34031AF75A1F0074C910 /* Request.swift in Sources */,
 				2C0F342E1B0450780074C910 /* BookMarkTableViewController.swift in Sources */,
+				2CBA5C681B04991C00CA6E7F /* BookMark.swift in Sources */,
 				2C021B601AE769A800B534B3 /* MainViewController.swift in Sources */,
 				2C021B5A1AE754F900B534B3 /* SWRevealViewController.m in Sources */,
 			);

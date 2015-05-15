@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import CoreData
+
 
 class BookMarkTableViewController: UITableViewController {
 
+    
+    
     @IBOutlet weak var mainButton: UIBarButtonItem!
+    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,11 @@ class BookMarkTableViewController: UITableViewController {
             mainButton.target = self.revealViewController()
             mainButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        let fetchRequest = NSFetchRequest(entityName: "Bookmark")
+        if let fetchResults = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [BookMark] {
+            println(fetchResults.count)
         }
         
     }
