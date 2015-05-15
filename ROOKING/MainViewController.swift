@@ -35,7 +35,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if item.tag == 1 {
             revealViewController().revealToggle(self)
         } else {
-            
             if titleArray.count > 0 {
                 titleArray = []
             }
@@ -75,13 +74,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         titleArray = request.send(URL.main)!
-       // self.navigationController?.navigationBarHidden = true
     }
 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

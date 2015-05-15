@@ -12,8 +12,6 @@ import CoreData
 
 class WebViewController: UIViewController{
 
-    
-    
     @IBOutlet weak var webView: UIWebView!
     var coll: NSMutableDictionary?
     var content:NSString?
@@ -50,7 +48,6 @@ class WebViewController: UIViewController{
                 if let urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) {
                     self.content = urlContent
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        println(urlContent)
                         self.webView.loadHTMLString(urlContent as String, baseURL: url)
                     })
                 }

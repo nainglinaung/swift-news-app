@@ -10,6 +10,27 @@ import UIKit
 
 class BookMarkTableViewCell: UITableViewCell {
 
+    var coll:BookMark? {
+        didSet{
+            updateUI()
+        }
+    }
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var imageview: UIImageView!
+    
+    
+    func updateUI() {
+        println("from tablecell")
+        title.text = coll?.title
+        if let imageURL = coll?.image {
+            request.getImage(imageURL, callback: {(image) in
+                self.imageview.image = image
+            })
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

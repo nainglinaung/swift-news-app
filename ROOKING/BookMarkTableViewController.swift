@@ -11,16 +11,23 @@ import CoreData
 
 
 class BookMarkTableViewController: UITableViewController {
+    
+    
+    
+    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
 
+    var fetchResults = [BookMark]()
+    
     
     
     @IBOutlet weak var mainButton: UIBarButtonItem!
-    let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
-
-    
+  
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let fetchRequest = NSFetchRequest(entityName: "Bookmark")
+        fetchResults = (managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [BookMark])!
         
         if self.revealViewController() != nil {
             mainButton.target = self.revealViewController()
@@ -28,11 +35,7 @@ class BookMarkTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        let fetchRequest = NSFetchRequest(entityName: "Bookmark")
-        if let fetchResults = managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [BookMark] {
-            println(fetchResults.count)
-        }
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,27 +46,21 @@ class BookMarkTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        
+        return fetchResults.count
     }
 
-    /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! BookMarkTableViewCell
+        cell.coll = fetchResults[indexPath.row] as BookMark
         return cell
     }
-    */
-
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
