@@ -21,7 +21,7 @@ class BookMarkTableViewCell: UITableViewCell {
     
     
     func updateUI() {
-        println("from tablecell")
+
         title.text = coll?.title
         if let imageURL = coll?.image {
             request.getImage(imageURL, callback: {(image) in
@@ -30,7 +30,6 @@ class BookMarkTableViewCell: UITableViewCell {
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -38,7 +37,6 @@ class BookMarkTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

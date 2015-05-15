@@ -11,20 +11,20 @@ import UIKit
 class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, UITabBarDelegate{
 
     
-    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        // println(item.tag)
-        if item.tag == 1 {
-            revealViewController().revealToggle(self)
-        }
-    }
-    
     @IBOutlet weak var Home: UITabBarItem!
     @IBOutlet weak var mainButton: UIButton!
     
     var galleryArray:NSArray = []
     var request = Request()
+
     
     
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+       
+        if item.tag == 1 {
+            revealViewController().revealToggle(self)
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return galleryArray.count

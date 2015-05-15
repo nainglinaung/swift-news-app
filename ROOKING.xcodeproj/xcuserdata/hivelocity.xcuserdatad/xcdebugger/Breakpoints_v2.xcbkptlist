@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/MainTableViewCell.swift"
-            timestampString = "452591785.213339"
+            timestampString = "453381443.673603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "updateUI()"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "453273649.73101"
+            timestampString = "453381443.673603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -264,59 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/GalleryTableViewCell.swift"
-            timestampString = "453270807.184096"
+            timestampString = "453381443.673603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "updateUI()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.GalleryTableViewCell.updateUI (ROOKING.GalleryTableViewCell)() -&gt; ()"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/GalleryTableViewCell.swift"
-                  timestampString = "453113180.730789"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "1181">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.GalleryTableViewCell.(updateUI (ROOKING.GalleryTableViewCell) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/GalleryTableViewCell.swift"
-                  timestampString = "453113180.731047"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/GalleryTableViewCell.swift"
-            timestampString = "453270807.184096"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "updateUI()"
             landmarkType = "5">
          </BreakpointContent>
@@ -328,44 +280,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "453270807.184096"
+            timestampString = "453381443.673603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/SearchTable.swift"
-            timestampString = "453270378.74813"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "updateUI()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/WebViewController.swift"
-            timestampString = "453366405.580425"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "insertData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -472,12 +392,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/WebViewController.swift"
-            timestampString = "453380072.915445"
+            timestampString = "453381443.673603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "Bookmark(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ROOKING/MainTableViewCell.swift"
+            timestampString = "453381443.673603"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateUI()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

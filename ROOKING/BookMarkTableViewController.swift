@@ -18,11 +18,10 @@ class BookMarkTableViewController: UITableViewController {
     
     var fetchResults = [BookMark]?()
     
+    @IBOutlet weak var mainButton: UIBarButtonItem!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
-        
+
         if segue.identifier == "bookMark" {
             println(fetchResults)
             if  let index = tableView.indexPathForSelectedRow() {
@@ -38,13 +37,11 @@ class BookMarkTableViewController: UITableViewController {
                     }
                 }
             }
-
         }
-        
-        
     }
+    
     @IBAction func clear(sender: UIBarButtonItem) {
-        
+
         if let fetch = fetchResults {
             for result in fetch {
                 managedObjectContext.deleteObject(result)
@@ -55,26 +52,16 @@ class BookMarkTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    
-    
-    
-    @IBOutlet weak var mainButton: UIBarButtonItem!
-  
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let fetchRequest = NSFetchRequest(entityName: "Bookmark")
         fetchResults = (managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [BookMark])!
-        
         
         if self.revealViewController() != nil {
             mainButton.target = self.revealViewController()
             mainButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-
     }
 
     override func didReceiveMemoryWarning() {

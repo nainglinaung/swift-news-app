@@ -19,12 +19,20 @@ class SearchTable: UITableViewCell {
             updateUI()
         }
     }
+    
     func updateUI() {
-           var data = coll!["title"]! as! String
-           var urlString = coll!["image"]! as! String
-           titleLabel.text = data
-           request.getImage(urlString, callback: {(image) in
-               self.featuredImage.image = image
-           })
+        var urlString = coll!["image"]! as! String
+        
+        if let collection = coll {
+            if let data = collection["title"] as? String {
+                titleLabel.text = data
+            }
+            if let urlString = collection["image"] as? String {
+                request.getImage(urlString, callback: {(image) in
+                    self.featuredImage.image = image
+                })
+            }
+        }
     }
+    
 }

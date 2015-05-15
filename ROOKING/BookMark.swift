@@ -29,7 +29,7 @@ class BookMark: NSManagedObject {
     }
     
     func outputAsDictionary() -> NSDictionary?{
-        var dict:NSDictionary? = [
+        return [
             "title" : self.title,
             "id"    : "\(self.id)",
             "image" : self.image,
@@ -38,8 +38,6 @@ class BookMark: NSManagedObject {
             "link": self.link,
             "data": self.data
         ]
-        return dict
-    
     }
 
 }

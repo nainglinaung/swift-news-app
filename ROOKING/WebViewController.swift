@@ -19,11 +19,12 @@ class WebViewController: UIViewController{
     let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     func insertData(data:NSMutableDictionary) -> Void {
-      let BookmarkEntry = NSEntityDescription.insertNewObjectForEntityForName("Bookmark", inManagedObjectContext: managedObjectContext) as! BookMark
+        if let BookmarkEntry = NSEntityDescription.insertNewObjectForEntityForName("Bookmark", inManagedObjectContext: managedObjectContext) as? BookMark {
             if let result = coll {
-               BookmarkEntry.save(result)
+                BookmarkEntry.save(result)
                 managedObjectContext.save(nil)
             }
+        }
     }
     
     @IBAction func back(sender: UIBarButtonItem) {
@@ -43,9 +44,8 @@ class WebViewController: UIViewController{
         
         if let collection = coll {
             if let link = collection["link"] as? String {
-              fetchURL(link)
+                fetchURL(link)
             }
-            println("hi")
         } else {
             print(coll)
         }
@@ -53,7 +53,6 @@ class WebViewController: UIViewController{
     
     func fetchURL(link:String) {
         let url  = NSURL(string: link)
-        println(link)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
             if error == nil {
                 if let urlContent = NSString(data: data, encoding: NSUTF8StringEncoding) {

@@ -26,28 +26,31 @@ class GalleryTableViewCell: UITableViewCell {
     
     func updateUI() {
     
-    
-        var collectionTitle = coll!["title"]! as! String
-        var collectionImagePath = coll!["images"]! as! [String]
-        
-        title.text = collectionTitle
-        
+        // Default Image
         imageOne.image = UIImage(named: "one.png")
         imageTwo.image = UIImage(named: "one.png")
         imageThree.image = UIImage(named: "one.png")
         
-        
-        request.getImage(collectionImagePath[0], callback: {(image) in
-            self.imageOne.image = image
-        })
-        
-        request.getImage(collectionImagePath[1], callback: {(image) in
-            self.imageTwo.image = image
-        })
-        
-        request.getImage(collectionImagePath[2], callback: {(image) in
-            self.imageThree.image = image
-        })        
+        if let collection = coll {
+    
+            if let collectionTitle = collection["title"] as? String {
+                title.text = collectionTitle
+            }
+            
+            if let collectionImagePath = collection["images"] as? [String] {
+                request.getImage(collectionImagePath[0], callback: {(image) in
+                    self.imageOne.image = image
+                })
+                
+                request.getImage(collectionImagePath[1], callback: {(image) in
+                    self.imageTwo.image = image
+                })
+                
+                request.getImage(collectionImagePath[2], callback: {(image) in
+                    self.imageThree.image = image
+                })
+            }
+        }
     }
     
     
@@ -58,7 +61,6 @@ class GalleryTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

@@ -35,13 +35,20 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        var data = coll!["title"]! as! String
-        var urlString = coll!["image"]! as! String
-        title.text = data
+      
+        // Default Image
         featured.image = UIImage(named: "one.png")
-        request.getImage(urlString, callback: {(image) in
-           self.featured.image = image
-        })
-    }
+
+        if let collection = coll {
+            if let data = collection["title"] as? String {
+                title.text = data
+            }
+            if let urlString = collection["image"] as? String {
+                request.getImage(urlString, callback: {(image) in
+                    self.featured.image = image
+                })
+            }
+        }
+      }
 
 }

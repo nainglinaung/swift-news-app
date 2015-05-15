@@ -25,8 +25,7 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
+
         if segue.identifier == "showDetail" {
             if  let index = tableView.indexPathForSelectedRow() {
                 if let controller = segue.destinationViewController as? WebViewController {
@@ -64,10 +63,10 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
         super.viewDidLoad()
         
         if searchText != nil {
-            //search it
+//            search it
 //            var resultArray = request.send(URL.main)
 //            println(resultArray)
-            // first time search
+//            first time search
         }
         
         if self.revealViewController() != nil {
