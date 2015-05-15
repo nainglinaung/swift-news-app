@@ -13,10 +13,21 @@ import CoreData
 class BookMarkTableViewController: UITableViewController {
     
     
+    @IBAction func clear(sender: UIBarButtonItem) {
+        
+        if let fetch = fetchResults {
+            for result in fetch {
+                managedObjectContext.deleteObject(result)
+                managedObjectContext.save(nil)
+            }
+        }
+        fetchResults = nil
+        self.tableView.reloadData()
+    }
     
     let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
 
-    var fetchResults = [BookMark]()
+    var fetchResults = [BookMark]?()
     
     
     
@@ -50,14 +61,21 @@ class BookMarkTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return fetchResults.count
+        if let fetch = fetchResults {
+            return fetch.count
+        } else {
+            return 0
+        }
     }
 
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIdentifier, forIndexPath: indexPath) as! BookMarkTableViewCell
-        cell.coll = fetchResults[indexPath.row] as BookMark
+        
+        if let fetch = fetchResults {
+            cell.coll = fetch[indexPath.row] as BookMark
+        }
+        
         return cell
     }
   

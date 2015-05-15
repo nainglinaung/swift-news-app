@@ -702,7 +702,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Qdk-DG-5Hi">
                         <barButtonItem key="leftBarButtonItem" image="reveal-icon.png" id="f5X-jo-20z"/>
-                        <barButtonItem key="rightBarButtonItem" title="clear" id="xbt-Xj-2HQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="clear" id="xbt-Xj-2HQ">
+                            <connections>
+                                <action selector="clear:" destination="d19-Ne-VnR" id="BAd-M5-2HQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainButton" destination="f5X-jo-20z" id="S7v-te-NxG"/>
