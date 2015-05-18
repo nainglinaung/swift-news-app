@@ -24,22 +24,28 @@ var request = Request()
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate{
 
     
-    var titleArray:NSArray = []
+    var titleArray:NSArray = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     
     @IBOutlet weak var tableView: UITableView!
     
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        // println(item.tag)
+     
         if item.tag == 1 {
             revealViewController().revealToggle(self)
         } else {
+            
             if titleArray.count > 0 {
                 titleArray = []
+                request.send(URL.side, callback:{ (list) in
+                    self.titleArray = (list ?? nil)!
+                })
             }
-            titleArray = request.send(URL.side)!
-            self.tableView.reloadData()
         }
     }
     
@@ -73,7 +79,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleArray = request.send(URL.main)!
+        request.send(URL.side, callback:{ (list) in
+            if list != nil {
+                println(list)
+                self.titleArray = list!
+            }
+        })
     }
 
     

@@ -15,14 +15,24 @@ public class Request {
     
     var imageCache = [String:UIImage]()
         
-    func send(urlString:String) -> NSArray?{
+    func send(urlString:String,callback: NSArray? -> Void) {
+        
         if let url = NSURL(string: urlString) {
-            if let data = NSData(contentsOfURL: url) {
-                let lists = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error:nil) as! NSArray
-                return lists
-            }
+            
+            let request = NSURLRequest(URL: url)
+            let mainQueue = NSOperationQueue.mainQueue()
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (Response, data, error) -> Void in
+                if error == nil {
+                    let lists = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSArray
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        callback(lists)
+                    })
+                }
+            })
+        } else {
+          callback(nil)
         }
-        return nil
     }
             
     func getImage(urlString:String,callback: UIImage? -> Void) {

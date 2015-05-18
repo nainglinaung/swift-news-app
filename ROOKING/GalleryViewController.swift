@@ -14,7 +14,12 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var Home: UITabBarItem!
     @IBOutlet weak var mainButton: UIButton!
     
-    var galleryArray:NSArray = []
+    @IBOutlet weak var tableView: UITableView!
+    var galleryArray:NSArray = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     var request = Request()
 
     
@@ -42,8 +47,12 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-        galleryArray = request.send(URL.gallery)!
         
+        request.send(URL.gallery, callback: { (list) in
+            if list != nil {
+                self.galleryArray = list!
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

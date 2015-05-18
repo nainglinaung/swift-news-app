@@ -517,6 +517,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="home" destination="5iD-Nd-7Pe" id="4iZ-mw-V6d"/>
+                        <outlet property="tableView" destination="OKW-DU-pwn" id="deQ-lk-hi7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhG-8y-er6" userLabel="First Responder" sceneMemberID="firstResponder"/>

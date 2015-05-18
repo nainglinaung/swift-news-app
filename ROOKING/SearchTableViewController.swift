@@ -20,7 +20,11 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     
     var searchText:String? = "" {
         didSet {
-            resultArray = request.send(URL.main)!
+            request.send(URL.main, callback: { (list) in
+                if list != nil {
+                    self.resultArray = list!
+                }
+            })
         }
     }
     

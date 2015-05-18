@@ -16,7 +16,11 @@ class BookMarkTableViewController: UITableViewController {
     
     let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
-    var fetchResults = [BookMark]?()
+    var fetchResults = [BookMark]?() {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var mainButton: UIBarButtonItem!
     
@@ -49,7 +53,6 @@ class BookMarkTableViewController: UITableViewController {
             }
         }
         fetchResults = nil
-        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
