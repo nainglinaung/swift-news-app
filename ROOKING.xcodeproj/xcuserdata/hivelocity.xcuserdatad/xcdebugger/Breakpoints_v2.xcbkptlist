@@ -90,101 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "452421127.109147"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "SearchTableViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "452421127.109147"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "SearchTableViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.SearchTableViewController.searchText.materializeForSet : Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/SearchTableViewController.swift"
-                  timestampString = "452420263.09184"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.SearchTableViewController.init (ROOKING.SearchTableViewController.Type)(style : C.UITableViewStyle) -&gt; ROOKING.SearchTableViewController"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/SearchTableViewController.swift"
-                  timestampString = "452420263.091978"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.SearchTableViewController.init (ROOKING.SearchTableViewController.Type)(nibName : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;, bundle : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSBundle&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ROOKING.SearchTableViewController&gt;"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/SearchTableViewController.swift"
-                  timestampString = "452420263.092076"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "45">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ROOKING.SearchTableViewController.init (ROOKING.SearchTableViewController.Type)(coder : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSCoder&gt;) -&gt; Swift.ImplicitlyUnwrappedOptional&lt;ROOKING.SearchTableViewController&gt;"
-                  moduleName = "ROOKING"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hivelocity/Desktop/projects/Swift/Rooking/ROOKING/ROOKING/SearchTableViewController.swift"
-                  timestampString = "452420263.092173"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "453627423.500513"
+            timestampString = "453702583.396785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -222,22 +128,6 @@
             startingLineNumber = "53"
             endingLineNumber = "53"
             landmarkName = "updateUI()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ROOKING/SearchTableViewController.swift"
-            timestampString = "453627423.500513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

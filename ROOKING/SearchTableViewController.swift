@@ -17,7 +17,6 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     }
     var request = Request()
     
-    
     var searchText:String? = "" {
         didSet {
             request.send(URL.main, callback: { (list) in
@@ -29,12 +28,13 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        
         if segue.identifier == "showDetail" {
             if  let index = tableView.indexPathForSelectedRow() {
-                if let controller = segue.destinationViewController as? WebViewController {
-                    if let data = resultArray[index.row] as? NSMutableDictionary {
-                        controller.coll = data
+                var destination =  segue.destinationViewController as? UIViewController
+                if let navCon = destination as? UINavigationController {
+                    if let value = navCon.visibleViewController as? WebViewController {
+                        value.coll =  resultArray[index.row] as? NSMutableDictionary
                     }
                 }
             }

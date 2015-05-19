@@ -760,7 +760,7 @@
         <image name="reveal-icon.png" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="83H-4x-4zd"/>
         <segue reference="FDf-zw-xaI"/>
+        <segue reference="K0o-a2-5qr"/>
     </inferredMetricsTieBreakers>
 </document>
