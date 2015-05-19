@@ -28,6 +28,7 @@ class WebViewController: UIViewController{
     }
     
     @IBAction func back(sender: UIBarButtonItem) {
+        println("hi")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

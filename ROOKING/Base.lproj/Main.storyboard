@@ -563,7 +563,7 @@
                                 <connections>
                                     <outlet property="featuredImage" destination="MmS-H7-SRB" id="GbX-2b-Jvd"/>
                                     <outlet property="titleLabel" destination="v6i-E4-AzN" id="gzn-g6-0qo"/>
-                                    <segue destination="8Ai-98-S0d" kind="show" identifier="showDetail" id="K0o-a2-5qr"/>
+                                    <segue destination="8Ai-98-S0d" kind="showDetail" identifier="searchDetail" id="K0o-a2-5qr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -761,6 +761,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FDf-zw-xaI"/>
-        <segue reference="K0o-a2-5qr"/>
+        <segue reference="TzI-fG-3aA"/>
     </inferredMetricsTieBreakers>
 </document>

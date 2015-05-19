@@ -28,8 +28,7 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "searchDetail" {
             if  let index = tableView.indexPathForSelectedRow() {
                 var destination =  segue.destinationViewController as? UIViewController
                 if let navCon = destination as? UINavigationController {
