@@ -49,9 +49,7 @@ class GalleryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.navigationController?.navigationBarHidden = true
         
         request.send(URL.gallery, callback: { (list) in
-            if list != nil {
-                self.galleryArray = list!
-            }
+           self.galleryArray = list! ?? []
         })
     }
 

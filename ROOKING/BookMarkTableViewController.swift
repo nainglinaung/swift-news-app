@@ -12,8 +12,6 @@ import CoreData
 
 class BookMarkTableViewController: UITableViewController {
     
-    
-    
     let managedObjectContext:NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext!
     
     var fetchResults = [BookMark]?() {
@@ -26,7 +24,7 @@ class BookMarkTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        if segue.identifier == "bookMark" {
+        if segue.identifier == SEGUE.bookmark {
             println(fetchResults)
             if  let index = tableView.indexPathForSelectedRow() {
                 var destination =  segue.destinationViewController as? UIViewController
@@ -78,11 +76,7 @@ class BookMarkTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let fetch = fetchResults {
-            return fetch.count
-        } else {
-            return 0
-        }
+        return fetchResults!.count ?? 0
     }
 
   

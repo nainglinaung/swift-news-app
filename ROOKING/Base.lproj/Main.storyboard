@@ -285,7 +285,7 @@
                                         <connections>
                                             <outlet property="featured" destination="q5I-ZT-VZ0" id="oAN-tQ-tD0"/>
                                             <outlet property="title" destination="rMA-4X-rUY" id="CWg-jf-wdu"/>
-                                            <segue destination="8Ai-98-S0d" kind="showDetail" identifier="showDetail" id="TzI-fG-3aA"/>
+                                            <segue destination="8Ai-98-S0d" kind="showDetail" identifier="main" id="TzI-fG-3aA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -681,7 +681,7 @@
                                 <connections>
                                     <outlet property="imageview" destination="hXH-eo-uCC" id="Gr4-ox-wyc"/>
                                     <outlet property="title" destination="0tr-qD-nSF" id="sgB-2e-uRg"/>
-                                    <segue destination="8Ai-98-S0d" kind="showDetail" identifier="bookMark" id="83H-4x-4zd"/>
+                                    <segue destination="8Ai-98-S0d" kind="showDetail" identifier="bookmark" id="83H-4x-4zd"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lLl-xe-Of1">
@@ -761,6 +761,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FDf-zw-xaI"/>
-        <segue reference="TzI-fG-3aA"/>
+        <segue reference="83H-4x-4zd"/>
     </inferredMetricsTieBreakers>
 </document>

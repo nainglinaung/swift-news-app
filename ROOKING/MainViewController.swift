@@ -9,16 +9,6 @@
 import UIKit
 
 
-public struct Storyboard {
-    static let CellReuseIdentifier = "cell"
-}
-
-public struct URL {
-    static let main = "http://localhost:3000"
-    static let gallery = "http://localhost:3000/gallery"
-    static let side = "http://localhost:3000/two"
-}
-
 var request = Request()
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate{
@@ -52,7 +42,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == SEGUE.main {
             if  let index = tableView.indexPathForSelectedRow() {
                 var destination =  segue.destinationViewController as? UIViewController
                 if let navCon = destination as? UINavigationController {
@@ -65,7 +55,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
+        return titleArray.count 
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -28,6 +28,7 @@
 		2C5F36CB1AEE1D92004BDA5F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F36CA1AEE1D92004BDA5F /* MainTableViewCell.swift */; };
 		2C5F36CD1AEE4261004BDA5F /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5F36CC1AEE4261004BDA5F /* one.png */; };
 		2CBA5C681B04991C00CA6E7F /* BookMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA5C671B04991C00CA6E7F /* BookMark.swift */; };
+		2CC139D61B0B3ABC00F57FFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC139D51B0B3ABC00F57FFB /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		2C5F36CA1AEE1D92004BDA5F /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		2C5F36CC1AEE4261004BDA5F /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
 		2CBA5C671B04991C00CA6E7F /* BookMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMark.swift; sourceTree = "<group>"; };
+		2CC139D51B0B3ABC00F57FFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		2C021B2B1AE74F2600B534B3 /* ROOKING */ = {
 			isa = PBXGroup;
 			children = (
+				2CC139D51B0B3ABC00F57FFB /* Constants.swift */,
 				2C0F34351B0452B80074C910 /* BookMark Table */,
 				2C0F34321B04522D0074C910 /* SWREVEAL */,
 				2C0F34311B04521B0074C910 /* Main Table */,
@@ -309,6 +312,7 @@
 				2C0F34051AF763CE0074C910 /* SearchTable.swift in Sources */,
 				2C021B321AE74F2600B534B3 /* ROOKING.xcdatamodeld in Sources */,
 				2C0F33FF1AF09D530074C910 /* GalleryTableViewCell.swift in Sources */,
+				2CC139D61B0B3ABC00F57FFB /* Constants.swift in Sources */,
 				2C5F36CB1AEE1D92004BDA5F /* MainTableViewCell.swift in Sources */,
 				2C0F34341B0452B30074C910 /* BookMarkTableViewCell.swift in Sources */,
 				2C0F34071AFA21C50074C910 /* WebViewController.swift in Sources */,
